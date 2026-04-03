@@ -1,0 +1,52 @@
+
+# Python cache and build artifacts
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+
+# Virtual environments
+.venv/
+.venv310/
+backend/.venv/
+
+# Node dependencies and frontend build output
+node_modules/
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+
+# Environment files
+.env
+**/.env
+
+# Editor / OS files
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Local datasets, generated assets, and model binaries
+datasets/
+processed_audio/
+models/
+metrics/
+
+# Local audio/model artifact extensions
+*.pt
+*.pth
+*.ckpt
+*.wav
+*.mp3
+*.flac
+*.ogg
+*.m4a
+*.webm
+
+# Logs
+*.log
+
+

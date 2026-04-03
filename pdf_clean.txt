@@ -1,0 +1,622 @@
+=== PAGE 1 ===
+ 
+Copyright © 202 5 The Author(s)  : This is an open access article under the CC BY license 
+(http://creativecommons.org/licenses/by/4.0 /) 
+  
+ International Journal of Scientific Research in Computer Science, Engineering 
+and Information Technology  
+Peer Reviewed and Refereed International Scientific Research Journal  
+ISSN : 2456 -3307  
+Available Online at : ijsrcseit.com   
+doi : https://doi.org/10.32628/ CSEIT2612116  
+  
+ 
+ 
+  
+ 
+ 
+ 
+226 Kannada Speakers Speech Emotion Recognition Using Deep 
+Learning Technique: Anger, Fear, Sad and Neutral state  
+Hemakumar G  
+Department of Computer Science, Sri Mahadeshawara Govt., First Grade College, Kollegal – 571440 , Karnataka, 
+India  
+A R T I C L E I N F O  A B S T R A C T 
+Article History:  
+Accepted : 01 Jan 2026 
+Published: 25 Jan 2026 
+  In this paper, we have experimenting to identifying the Kannada emotional 
+speech signals recognition  using deep learning technique. Speech Emotion 
+Recognition (SER) is a hot research topic in the field of HCI (Human Computer 
+Interaction). To experiment we have created our own Kannada Emotional 
+Speech corpus recording in different android mobile phone, wi th sampling rate 
+48 kbps and mono channel and speakers are from the Karnataka and Tamil Nadu 
+boarder region, whose accents is a mixer of Kannada, Tamil and Telugu 
+languages. The emotions are anger, fear, sad and neutral is considered. Totally we 
+have 440 K annada emotional speech signals. To use this speech signal data in our 
+experiment, we have first down sampled all speech signals into 16 kbps, mono 
+channel and stored as wav files. Then we pass the each sample signals into the 
+pre-emphasize phase, then fra ming and windowing is done, then we extracted 
+features from each voice frame signal like MFCC, Chroma and „Mel‟ and then 
+passed to CNN (Convolution Neural Network) to train and testing the voice 
+signals. The CNN is capable to handle small amount of data fo r training, and with 
+smaller number of parameters. The average Kannada emotion recognition 
+accuracy rate of 93.77% is achieved. All computations are done using Python 
+programming language and used Python libraries like Librosa, Keras, pyaudio, 
+soundfile, s klearn.  
+Keywords:  Accent, Emotion Recognition, MFCC, CNN, HCI, Librosa   
+Publication Issue  
+Volume 1 2, Issue 1 
+January -February -2026 
+ 
+Page Number  
+226-233 
+ 
+Introduction  
+Language is one of the most important methods for 
+communication and speech is one of its main 
+mediums. Designing the human to machine interface, 
+the speech signal is transformed into analogue and 
+digital waveform which can be understood by the machine. Spe ech technologies are broadly used and 
+seen to have unlimited uses. In many of the human -
+machine interface applications, emotion recognition 
+from the speech signal is considered to be the research 
+topic for many years. For the identification of the 
+emotions  from the speech signal, many systems have 
+=== PAGE 2 ===
+Volume 12, Issue 1, January -February -2026 | http://ijsrcseit.com  Hemakumar G  Int. J. Sci. Res. Comput. Sci. Eng. Inf. Technol., January -February -2026, 12 (1) : 226-233 
+ 
+ 
+ 
+ 
+227 been developed until now. In this paper, speech 
+emotion recognition based on the previous 
+technologies which use different models and methods 
+for the emotion recognition is reviewed and a new 
+approach is suggested . They are used to differentiate 
+emotions such as anger, sad, fear and neutral state 
+when accents are mixtures of Kannada, Tamil and 
+Telugu languages. Accent is a way of speaking usual of 
+a particular group of people and especially of the 
+natives or reside nts of a region. In Kannada language, 
+the „accent‟ means „Ottu‟ and „Uchchaara ṇe‟, referring 
+to pronunciation, stress, or a regional way of speaking, 
+which shows a distinct sound pattern in their words 
+pronunciation. It also shows the importance given to 
+„Ottu akashara‟ to pronunciation of words by stressing 
+or emphasising on a syllable of the Kannada languages. 
+Hence our experiment becomes important on 
+recognition of the Kannada emotions on different 
+accents speakers.  
+Emotion recognition in spoken dialogu es has been 
+gaining increasing interest all through current years. 
+Speech Emotion Recognition (SER) is a hot research 
+topic in the field of Human Computer Interaction 
+(HCI). It has a potentially wide application, such as 
+the interface with robots, banking,  call centers, car 
+board systems, computer games, surveillance systems, 
+psychological treatments, robotics, online marketing 
+etc. For classroom orchestration or E -learning, 
+information about the emotional state of students can 
+provide focus on enhancement of teaching quality. 
+For example teacher can use SER to decide what 
+subjects can be taught and must be able to develop 
+strategies for managing emotions within the learning 
+environment.  
+Librosa is a python Library module used for 
+investigating the music an d sound which gives us the 
+referral devices we want to design and develop. It 
+absorbs the sound documents as the input for the 
+examination and modifies them with the help of 
+Fourier transform techniques. It also plots the 
+outcomes of the model.  
+ LITERATURE  SURVEY  
+Bennilo Fernandes (2021) et al., have evaluated using 
+RNN with hierarchal of LSTM and BiLSTM with 
+dropout layers and compared their performances on 
+interchanging the layers for a reduced Tamil 
+emotional speech data set. Also they evaluated 
+different archit ectures like; DHLL, DHLB, DHBL and 
+DHBB with dropout layers and the evaluation were 
+accuracy, loss, training time and evaluation time. The 
+results showed that the DHLB performs better than 
+other models. Accuracy rate of 84% is achieved with 
+minimum loss in  each seven basic emotions and time 
+taken for training and evaluation is also less than the 
+other models. Thus, they recommended for the 
+reduced Tamil emotional speech data set is to use 
+DHLB, since it has returned good efficiency of 
+recognition values wit hin an acceptable running time. 
+Javier G. Razuri (2015) et al., experimented on the 
+human‟s nonverbal cues such as pitch, loudness, 
+spectrum, speech rate which are the efficient carriers 
+of emotions.  Linear predictive coding (LPC) is used to 
+estimate the basic parameters into a speech signal, 
+such as the vocal tract transfer function and the 
+formant frequencies. It has good intuitive 
+interpretation both in time domain and in frequency 
+domain. The cepstral representation (Linear 
+Prediction Cepstral Coeffici ents (LPCC)) of its 
+coefficients is more used because of its higher 
+retrieval efficiency. Chunyi Wang, presented acoustic 
+features typically utilized in speech emotion 
+recognition such as time -domain features, frequency -
+domain features, statistical feature s, deep features and 
+hybrid features. In general, feature extraction depends 
+on the frame involved. A speech signal with a certain 
+duration is divided into frames with an interval 
+ranging from10 to 30ms, while features are then 
+extracted from every frame. Time -domain feature is 
+the direct process of the time domain waveform. This 
+is the most prevalent feature extraction method since 
+it is relatively easy to think of. It can extract features 
+such as short -time zero crossing rate, short -time 
+energy and pitch frequency. Frequency domain 
+=== PAGE 3 ===
+Volume 12, Issue 1, January -February -2026 | http://ijsrcseit.com  Hemakumar G  Int. J. Sci. Res. Comput. Sci. Eng. Inf. Technol., January -February -2026, 12 (1) : 226-233 
+ 
+ 
+ 
+ 
+228 feature involves (short -time) Fourier transform 
+wavelet transform and others. Initially, the time -
+domain signal is transformed into the frequency -
+domain, from which the feature is extracted. Such 
+features are highly associated w ith the human 
+perception of speech. Hence, they have apparent 
+acoustic characteristics. These features are usually 
+comprised of formant frequency, linear prediction 
+cepstral coefficient (LPCC), and Mel frequency 
+cepstral coefficients (MFCC). They can right ly signify 
+the channel feature, indicating noise resistance and 
+good recognition performance. Mohanty et al., (2022), 
+fills as the establishment for advancements, for 
+example, voice acknowledgment, voice control, order 
+capacities, and a lot more presented by tech goliaths 
+like Google and Microsoft as Alexa, Cortana, and 
+Samsung's Bixby, as well as other man -made 
+brainpower applications. Harshith B U et al., (2019) 
+used the happy sentence to the system; they found 
+more error comparably to that of angry and s ad 
+sentence. The fact for the reduced accuracy in happy 
+sentence is that in angry sentence pitch will be high 
+and for the sad sentence pitch will be low but in the 
+happy sentence the pitch value will be in between the 
+other two emotions. However, the main feature we 
+considered is pitch and its parameter the accuracy will 
+be dependent on pitch. Syeda Tamanna Alam 
+Monisha et al., (2022), in their research papers shown 
+that the world being digitized day by day, speech 
+emotion recognition has found increasing a pplications 
+in our daily lives. Geethashree and D. Ravi, (2018), 
+used the Self -created database containing 2800 
+emotional recordings Kannada Bayesian and HMM 
+model with MFCC feature Happy, excited, angry, and 
+sad found that the Average emotion error rate o f 25.5% 
+for Bayesian and 0.2% for HMM approach. Rahul. B. 
+Lanjewar et al., (2013) used the features like the pitch 
+related statistics, Formants and Mel Frequency 
+Cepstral Coefficients (MFCC) are also frequently 
+found to contribute as feature vectors. The p arametric 
+representations of Spectral measures other than 
+MFCCs are also common in research including the features of Wavelets, Teager energy operator (TEO) 
+based features, Log Frequency Power Coefficients 
+(LFPC) and Linear Prediction Cepstral Coefficients  
+(LPCC). These extracted features are stored by 
+training the database for the classification stage. 
+Classifiers to detect emotions, feature vectors belong 
+to the global statistics SVM (Support Vector Machine), 
+Neural Networks, Decision trees are employed a nd for 
+the vectors of short -term features HMM (Hidden 
+Markov Model) is used for its dynamic performance. 
+More diverse results have obtained in terms of 
+robustness when mathematical Teager Energy 
+Operator (TEO) were employed on speech to calculate 
+their ene rgy that reflects the stress in the airflow 
+structure of speech for both text dependent and text 
+independent models. Xu Dong An and Zhou Ruan 
+(2021), used the traditional phonological features by 
+dividing into acoustic features, rhythmic features and 
+phono logical features. Acoustic features are mainly 
+divided into vowels and consonants in speech; 
+rhythmic features are divided into energy, speech rate 
+and resonance peaks; and phonological features 
+represent the clarity of the speech signal. Due to the 
+comple xity of speech emotion, many emotions are 
+difficult to be recognized effectively by rhyme and 
+sound quality alone, resulting in poor differentiation 
+of a single original feature, which requires the 
+confusion of different speech features for speech 
+recognit ion. Moreover, the speech signal is a non -
+smooth random process with strong time variability, 
+so to increase the practicality of feature parameters 
+and reduce the complexity of feature extraction, 
+MFCC is selected as the speech emotion feature in 
+their pap er. Shubham Singh Chaudhary and Sachin 
+Garg (2021), discussed on the developments of AI 
+giving rise to several technologies involved in 
+Human -Computer Interaction. Aiming to develop and 
+upgrade HCI methods is of foremost importance 
+because HCI is the front end of AI which millions of 
+users experience. Some of the present HCI methods 
+require communication through touch, movement, 
+hand gestures, voice and facial gestures. Amid the 
+=== PAGE 4 ===
+Volume 12, Issue 1, January -February -2026 | http://ijsrcseit.com  Hemakumar G  Int. J. Sci. Res. Comput. Sci. Eng. Inf. Technol., January -February -2026, 12 (1) : 226-233 
+ 
+ 
+ 
+ 
+229 different methods, the voice -based intelligent devices 
+are acquiring popularity in a board range of 
+applications. In a voice -based system, a computer 
+agent is required to completely apprehend the 
+human‟s speech form in order to precisely pick up the 
+commands given to it. This field of study is called as 
+Speech Processing and involves of three components 
+like Speaker Identification, Speech Recognition and 
+Speech Emotion Detection. Speech Emotion 
+Detection is challenging to execute amidst the other 
+components due to its complexity. Moreover, the 
+definition of an intelligent computer syst em needs the 
+system to copy human behavior. A salient nature 
+unique to humans is the capability to alter discussions 
+based on the emotional state of the speaker and the 
+listener. Speech emotion detection can be made as a 
+classification issue solved using m any machine 
+learning algorithms. They created a Multi Perceptron 
+model, LSTM (Long short term memory) model and 
+CNN models. The MLP and LSTM were not suitable 
+as it gave us low accuracy in their experiment.  
+ 
+SPEECH CORPUS  
+In this experiment, we have design ed our own 
+Kannada emotional speech signals database. We have 
+recorded the Kannada sentence as shown in table -1 
+using the different android mobile recorder. Here 
+emotions used are Anger, Fear, Sad and Neutral 
+(Normal) voice. Android mobile recorded signals  are 
+at the rate of 48Kbps and mono channel. Here the 
+speakers are the people living near boarder region of 
+Karnataka and Tamil Nadu area that is 
+Chamarajanagara district forest region boarded to two 
+states. Table 2 shows that number of speakers used to 
+record the Kannada sentences in different emotions. 
+Here each sentence is uttered by 5 times by each 
+speaker, making 5 emotional signals of each type. 
+Totally we have used 440 Kannada emotional speech 
+signals recorded in different android mobile phone 
+has di fferent frequency. Hence to make uniform 
+frequency, each signal is resampled to 16 kbps, mono channel and stored as wav files before using the 
+emotional speech signals in our experiment.  
+ 
+Table 1: Kannada Sentence used to design the  
+Emotion Speech Signal. Its continuous Kannada 
+speech signals.  
+Sl. 
+No Sentence in Kannada 
+Script  Sentence in English 
+Transcript words  
+1. ಇದು  ಕಲಿಯುಗ  ಸಕಕ ರೆ  
+ಇದ್ ರ ೇನೆ  ನೊಣ , ಹಣ  
+ಇದ್ ರ ೇನೆ  ಜನಾ  Idu kaliyuga sakkare 
+idrēne no ṇa, haṇa 
+idrēne janaa  
+2. ನಾನು  ಶಾಲೆಗೆ  
+ಹೇಗುತ್ ತ ೇನೆ  ಆದರೆ  
+ಅವನು  ಮನೆಗೆ  
+ಹೇಗುತ್ ತ ತ್  ನೆ  Naanu saalege 
+hoogutteene aadare 
+avanu manege 
+hooguttaane  
+ 
+In this experiment, we have used Intel CORE i5 7th 
+generation laptop having processing capacity of 
+2.5GHz and 3 GB RAM. Here all our speakers are 
+peoples living in the Karnataka and Tamilnadu 
+boarder forest region, its located in chamarajanagara 
+district, this region people basically speak Kannada 
+languag e but they have learnt to speaks Tamil and 
+Telugu languages from childhood, hence their accents 
+is mixed with this 3 languages from their birth. Hence 
+we have selected the speakers who are educated at 
+least 10 + 2 level or more educated to read the 
+Kannada  sentence shown in our table 1 and produce 
+the emotional speech.  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+=== PAGE 5 ===
+Volume 12, Issue 1, January -February -2026 | http://ijsrcseit.com  Hemakumar G  Int. J. Sci. Res. Comput. Sci. Eng. Inf. Technol., January -February -2026, 12 (1) : 226-233 
+ 
+ 
+ 
+ 
+230 Table 2: Shows that number of speakers used to record the Kannada sentences in different emotions. Here each 
+sentence is uttered by 5 times by each speaker, making 5 emotional signals of each type by each speaker. Totally 
+we are having 440 signals or instances. Am ong 440 Kannada emotional speech signals used for 352 speech 
+signals for training and testing used 88 samples speech signals.  
+Gender  Anger  Fear Sad Neutral  
+Male Speakers  14 speakers  14 speakers  14 speakers  14 speakers  
+Female Speakers  10 speakers  10 speakers  10 speakers  10 speakers  
+ 
+METHODOLOGY  
+ 
+Figure 1: Show the Proposed Model for down sampling our Kannada emotional speech signal, pre emphasizing 
+phase, framing and Windowing, and then from each voiced signal frame extracting the features like MFCC, 
+Pitch and Mel values and combined to form row then passe d to our deep learning model (CNN) for training the 
+data using different epochs.  
+ 
+In this experiment, each Kannada emotional speech 
+signal sample is stored as wav file, and which is down 
+sampled at 16000 Hz. Then signal is passed wit h pre -
+emphasis phase, here we observe the spectrum of 
+voiced speech segment that is high frequencies 
+usually have smaller amplitude of high frequency 
+bands and decrease the amplitude of the lower bands 
+making the spectrum flatter. Then, frame blocking 
+whic h refers to the process of segmenting the speech 
+signal after pre -emphasis into number of small 
+overlapping frames. We have taken frame size of 20 
+msec, with an overlap of 6.5 msec [19]. Then each 
+frame is passed through the Hamming Window, 
+which extracts the stationary part of speech 
+[15][17][19]. Next is features extraction stage, here we 
+have extracting MFCC ( Mel Frequency Cepstral 
+Coefficient) represents the short -term power 
+spectrum of a sound, Chroma which  concerns to the 
+12 different pitch classes a nd „Mel‟ which is  Mel 
+Spectrogram Frequency. We extracted 26 features 
+values from each voice signal frame [15][16][17][19], which is passed to the CNN model for training the 
+data. Her parameter setting is required before passing 
+to CNN, those modification s are  
+Data tensor matrix in our experiment : After pre -
+processing, we obtain N frames of each voice sample 
+and 13 MFCCs, 12 pitchs and one „Mel” value for each 
+frame. Here each following frame is dependent on 
+previous frame, which is termed as time depende ncy 
+or temporal nature. For each voice samples, we have 
+2-D data matrix where rows represent contents of 
+each frame (13 MFCC + 12 Pitchs + 1 Mel = 26 values) 
+and columns represent number of frames that are 
+dependent sequentially. So matrix size will be 26 * N 
+for each instance of voice sample.  
+Hyper Parameters : Then we need tuning of hyper 
+parameters to achieve desired accuracy. Here we have 
+directly used Keras library which gives flexibility of 
+tuning of hyper parameters. Firstly, batch size used is 
+32 wh ich is default batch size of Keras then applied 
+Adam optimizer. Then Dropout regularization, which 
+deals with over fitting in neural networks, here we 
+
+=== PAGE 6 ===
+Volume 12, Issue 1, January -February -2026 | http://ijsrcseit.com  Hemakumar G  Int. J. Sci. Res. Comput. Sci. Eng. Inf. Technol., January -February -2026, 12 (1) : 226-233 
+ 
+ 
+ 
+ 
+231 used 0.1 as dropped dimensions. Then used 3 staked 
+layers.  
+Number of Recurrent Cells : In our experiment we 
+have „N‟ frames (Where „N‟ various for each instances 
+of voice signal, because we have taken Kannada 
+emotional sentences uttering has continuous speech 
+signal) to deal with temporal nature of the 
+application, we have used „N‟ recurrent cells.  
+Epochs : The numbers of epochs are defined as the 
+number of times we are training our model. We are 
+using Early Stopping which is used in LSTM to 
+remove over fitting.   
+Using those parameters for CNN each Kannada 
+emotional signals voice part is trained and stored as 
+features values of each types of emotional signals 
+separately. The CNN itself used here as classifier, 
+using this each type of emotional data is classified an d stored using labels. In our experiment CNN is used for 
+testing the Kannada emotional speech signal.  
+ 
+EXPERIMENTAL RESULTS  
+In this paper we have experimented only for Kannada 
+emotional speech like anger, fear, sad and neutral 
+state speaking. Here CNN mode l is used for training 
+and testing purpose with different feature sets of data 
+and with different epochs. The table 3 shows the 
+accuracy rate of recognition and identification of 
+Kannada emotion speech of having CNN model for 
+testing and training, but with  different features set 
+values and epoch is kept 400 as constant. The table 4 
+shows the proposed mode with different epochs for 
+Kannada emotion speech signals like anger, sad, fear 
+and neutral. The average Kannada emotion 
+recognition accuracy rate of 93.77 % is achieved in 
+this experiment.  
+Table 3: Showing the extracted features to pass into the CNN model for training the data and stored with 
+labelled. Here the accuracy rate of recognition and identification o f Kannada emotion speech in this table 
+according to emotions used here is anger, fear, sad and neutral state and compared the accuracy rate with 
+different features values. Here epochs of 400 is used.  
+Features values passing to CNN  Anger  Fear Sad Neutral  
+MFCC values  79.12%  78.34%  78.11%  79.89%  
+Pitch values  78.67%  78.39%  78.12%  78.99%  
+MFCC + Mel values  79.07%  79.23%  79.43%  79.67%  
+Pitch + Mel values  78.37%  78.2%  78.92%  79.39%  
+MFCC + Pitch values  89.21%  86.89%  87.02%  92.58%  
+Proposed method values  95.39%  91.36%  91.38%  96.96%  
+ 
+Table 4: Showing the experimental results on proposed mode with different epochs for Kannada emotions 
+speech signals like anger, sad, fear and neutral.  
+No. of Epochs  Anger  Fear Sad Neutral  
+100 Epochs  92.01%  90.98%  90.9%  93.78%  
+200 Epochs  94.23%  91.04%  91.23%  95.34%  
+300 Epochs  95.12%  91.34%  91.35%  96.45%  
+400 Epochs  95.39%  91.36%  91.38%  96.96%  
+500 Epochs  95.38%  91.36%  91.37%  97.16%  
+ 
+ 
+  
+=== PAGE 7 ===
+Volume 12, Issue 1, January -February -2026 | http://ijsrcseit.com  Hemakumar G  Int. J. Sci. Res. Comput. Sci. Eng. Inf. Technol., January -February -2026, 12 (1) : 226-233 
+ 
+ 
+ 
+ 
+232 DISCUSSION AND CONCLUSION  
+In our experiment we have used only 440 emotional 
+Kannada speech signal of only one regional accents 
+and trained and tested, hence we have received only 
+93.77% of accuracy when the epochs is 400. If 
+consider the all Kannada accents and trained with the 
+more number of samples s ignals than may expect the 
+more accuracy with less epochs and system can be 
+used emotional detection in real world applications. 
+In this experiment we have used the feature like 
+MFCC, Pitch and Mel. The MFCC are claimed to be 
+robust of all the features for  any speech tasks. The 
+consonant -vowel transition region also yields emotion 
+recognition but when formants features combined 
+with the basic spectral features have always 
+improvement in the system performance. We 
+absorbed that CNN technique is better techni que in 
+training and testing for recognition of any Kannada 
+emotional speech signals. But only thing is that we 
+need to apply all types of Kannada accents for training 
+to build Kannada emotion recognition for any 
+Kannada accents.  
+ 
+ACKNOWLEDGE  
+The author wou ld like to thank all my friends, 
+colleagues, reviewers and Editorial staff for their help 
+during preparation of this paper and also we thank for 
+the speaker who helped us by providing their voice 
+for recording their emotional Kannada speech.  
+ 
+References  
+ 
+[1]. Bennilo Fernandes et al., (2021), “Speech 
+Emotion Recognition Using Deep Learning 
+LSTM for Tamil Language”, Pertanika J. Sci. & 
+Technol. 29 (3): 1915 - 1936 (2021), e -ISSN: 
+2231 -8526, DOI: 
+https://doi.org/10.47836/pjst.29.3.33  
+[2]. Leila Kerkeni et al., (2018),  “Speech Emotion 
+Recognition: Methods and Cases Study”, In 
+Proceedings of the 10th International 
+Conference on Agents and Artificial Intelligence (ICAART 2018) - Volume 2, pages 
+175-182 ISBN: 978 -989-758-275-2. 
+[3]. Javier G. Razuri et al., (2015), “Speech emot ion 
+recognition in emotional feedback for Human -
+Robot Interaction”, (IJARAI) International 
+Journal of Advanced Research in Artificial 
+Intelligence, Vol. 4, No.2, 2015.  
+[4]. Chunyi Wang et al., (2022), “Speech Emotion 
+Recognition Based on Multi -feature and Multi -
+lingual Fusion”, Multimedia Tools and 
+Applications, 2022, Springer, 
+DOI:10.1007/s11042 -021-10553 -4 
+[5]. Mohanty et al., (2022), "Speech Emotion 
+Recognition System using Librosa for Better 
+Customer Experience," Graduate Research in 
+Engineering and Technolo gy (GRET): Vol. 1: 
+Issue 6, Article 7. DOI: 
+10.47893/GRET.2022.1114.  
+[6]. Harshith B U et al., (2019), “Speaker Dependent 
+Emotion Recognition from Speech for Kannada 
+language”, International Journal of Engineering 
+Research & Technology (IJERT) ISSN: 2278 -
+0181 P ublished by, www.ijert.org NCRACES - 
+2019 Conference Proceedings, Special Issue – 
+2019, Volume 7, Issue 10, Pg 1 -4. 
+[7]. Syeda Tamanna Alam Monisha et al., (2022), “A 
+Review of the Advancement in Speech Emotion 
+Recognition for Indo -Aryan and Dravidian 
+Languages ”, Hindawi Advances in Human -
+Computer Interaction Volume 2022, Article ID 
+9602429, 11 pages. 
+https://doi.org/10.1155/2022/9602429  
+[8]. Geethashree and D. Ravi, (2018), “Kannada 
+emotional speech database: design, 
+development and evaluation,” in Proceedings of 
+the International Conference on Cognition and 
+Recognition, pp. 135 –143, Springer, 2018.  
+[9]. Ashish B. Ingale et al., (2012), “Speech Emotion 
+Recognition”, International Journal of Soft 
+Computing and Engineering (IJSCE) ISSN: 
+2231 -2307, Volume -2 Issue -1, March 2 012 pg 
+235-238. 
+=== PAGE 8 ===
+Volume 12, Issue 1, January -February -2026 | http://ijsrcseit.com  Hemakumar G  Int. J. Sci. Res. Comput. Sci. Eng. Inf. Technol., January -February -2026, 12 (1) : 226-233 
+ 
+ 
+ 
+ 
+233 [10]. Xu Dong An and Zhou Ruan (2021), “Speech 
+Emotion Recognition algorithm based on deep 
+learning algorithm fusion of temporal and 
+spatial features”, Journal of Physics: Conference 
+Series 1861 (2021) 012064, IOP Publishing 
+doi:10.1088/1742 -6596 /1861/1/012064.  
+[11]. Xingyu Cai et al., (2021), “Speech Emotion 
+Recognition with Multi -task Learning”, 
+INTERSPEECH 2021 30 August – 3 September, 
+2021, Brno, Czechia, pg 4508 -4512.  
+[12]. Rahul. B. Lanjewar et al., (2013), “Speech 
+Emotion Recognition: A Review”, Intern ational 
+Journal of Innovative Technology and 
+Exploring Engineering (IJITEE) ISSN: 2278 -
+3075 (Online), Volume -2 Issue -4, March 2013, 
+Pg. 68 -71. 
+[13]. Siddhant S. Patil et al., (2022), “Speech Emotion 
+Recognition System Using Recurrent Neural 
+Network in Deep Learn ing”, International 
+Journal for Research in Applied Science & 
+Engineering Technology (IJRASET), Volume 10 
+Issue III Mar 2022, pg. 2332 -2338, ISSN: 2321 -
+9653. 
+https://doi.org/10.22214/ijraset.2022.41112.  
+[14]. Shubham Singh Chaudhary and Sachin Garg, 
+(2021), “Sp eech Emotion Recognition”, 
+International Research Journal of 
+Modernization in Engineering Technology and 
+Science, Volume 03, Issue: 12, December -2021, 
+pg. 218 -221, e -ISSN: 2582 -5208.  
+[15]. Hemakumar G. et al., (2016), “Large Vocabulary 
+in Continuous Speech Recog nition Using HMM 
+and Normal Fit”, International Journal of 
+Computer Trends and Technology (IJCTT) – 
+Volume 42 Number 2 – December 2016 Pg. 
+102-107, ISSN: 2231 -2803.  
+[16]. Hemakumar G. et al., (2014) “Speakers‟ Accent 
+And Isolated Kannada Words Recognition”, 
+Amer ican Journal of Computer Science & 
+Information Technology, Publishing by 
+PUBICON International Publication, Volume 2, Issue 2, Nov -Dec 2014, pg. no. 071 -077, ISSN: 
+2349 -3917.  
+[17]. Hemakumar G et al., (2025), “Large Language 
+Model For Kannada Speech Recognition” , 
+International Journal of Engineering 
+Development and Research, July 2025, Volume 
+13, Issue 3, Pg 603 – 609, ISSN: 2321 -9939.  
+[18]. M. Gopal, (2025), “Deep Learning Core 
+Concepts, Methods and Application”, 
+publication by Pearson India Education Services 
+Pvt. L td, fourth impression 2025, ISBN 978 -93-
+560-6197 -2. 
+[19]. Hemakumar G. et al., (2014) "Automatic 
+Segmentation of Kannada Speech Signal into 
+Syllables and Sub -words: Noised and Noiseless 
+Signals”, published by International Journal of 
+Scientific & Engineering Res earch, Volume 5, 
+Issue 1, January -2014, Page No 1707 -1711, ISSN 
+2229 -5518.  
